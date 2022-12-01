@@ -18,12 +18,6 @@ impl Elf {
     }
 }
 
-// impl PartialOrd for Elf {
-//     fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-//         if self.cals >
-//     }
-// }
-
 pub fn solve() -> SolutionPair {
     let input = read_to_string("input/day01.txt").expect("Unable to read file");
     let mut lines = input.lines();
@@ -44,9 +38,8 @@ pub fn solve() -> SolutionPair {
     elves.sort();
     elves.reverse();
 
-    // Your solution here...
     let sol1: u64 = elves[0].get_cals();
-    let sol2: u64 = elves[0].get_cals() + elves[1].get_cals() + elves[2].get_cals();
+    let sol2: u64 = sol1 + elves[1].get_cals() + elves[2].get_cals();
 
     assert!(sol1 == 67450);
     assert!(sol2 == 199357);
