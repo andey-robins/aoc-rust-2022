@@ -80,6 +80,19 @@ fn reverse_score_round(elf: RPS, result: Result) -> u64 {
 
 pub fn solve() -> SolutionPair {
     let input = read_to_string("input/day02.txt").expect("Unable to open file");
+    two(input)
+}
+
+#[test]
+pub fn test() {
+    let input = read_to_string("input/tests/day02.txt").expect("Unable to open test file");
+    let (sol1, sol2) = two(input);
+
+    assert_eq!(sol1, Solution::U64(15));
+    assert_eq!(sol2, Solution::U64(12));
+}
+
+pub fn two(input: String) -> SolutionPair {
     let mut lines = input.lines();
 
     let mut total = 0;
@@ -96,9 +109,6 @@ pub fn solve() -> SolutionPair {
 
     let sol1: u64 = total;
     let sol2: u64 = total2;
-
-    assert!(sol1 == 13809);
-    assert!(sol2 == 12316);
 
     (Solution::U64(sol1), Solution::U64(sol2))
 }
