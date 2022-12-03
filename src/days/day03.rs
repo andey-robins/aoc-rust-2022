@@ -55,7 +55,6 @@ fn three(input: String) -> SolutionPair {
             }
 
             p2_total += ALPHABET.find(common).unwrap() as u64;
-            group = Vec::new();
         }
     }
 
